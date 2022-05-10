@@ -7,7 +7,7 @@
   
   ![Jersey](https://img.shields.io/badge/Jersey-%201.19.4-orange?style=flat)
   &nbsp;
-  ![Jquery](https://img.shields.io/badge/JQuery-%203.6.0-blue?style=flat)
+  ![Jquery](https://img.shields.io/badge/JQuery-%203.2.1-blue?style=flat)
   
 </div>
 
