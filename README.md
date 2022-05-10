@@ -5,16 +5,17 @@
   # ElectroGrid-AccountManagement
   A Rich Web-based Application based on RESTful Web Services
   
-  ![Jersey](https://img.shields.io/badge/Jersey-%201.19.4-orange?style=flat)
+  ![Jersey](https://img.shields.io/badge/Jersey-%201.19.4-yellow?style=flat)
   &nbsp;
   ![Jquery](https://img.shields.io/badge/JQuery-%203.2.1-blue?style=flat)
+  &nbsp;
   
 </div>
 
 <br>
 
 ## Description:
-This is a part of <a href="https://github.com/ElectroGrid-PAF/ElectroGrid.git">RESTful web service for powergird maintenance</a>. This part comprises web service for Electricity Account Management.
+This is a part of <a href="https://github.com/ElectroGrid-PAF/ElectroGrid.git">RESTful web service for powergird maintenance</a>. This part comprises web service for Electricity Account Management. Developed with micro-services-based backend and rich front-end.
 
 
 
