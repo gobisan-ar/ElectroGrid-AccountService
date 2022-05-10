@@ -60,7 +60,7 @@
 					
 					<label>Electricity Supply:</label>
 					&nbsp;&nbsp;
-					<select id="ddlSuply" name="ddlSuply">
+					<select id="ddlSupply" name="ddlSupply">
 							<option value="0">--Electricity Supply--</option>
 							<option value="15">Single Phase 15A</option>
 							<option value="30">Single Phase 30A</option>

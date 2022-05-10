@@ -50,8 +50,8 @@ $(document).on("click", ".btnUpdate", function(event)
 	 $("#accPremise").val($(this).closest("tr").find('td:eq(2)').text()); 
   	 $('input[name="rdoType"]:checked').val($(this).closest("tr").find('td:eq(3)').text()); 
   	 $("#ddlPurpose").val($(this).closest("tr").find('td:eq(4)').text()); 
-  	 $("#ddlSuply").val($(this).closest("tr").find('td:eq(5)').text()); 
-  	 $('input[name="rdoStatus"]:checked').val($(this).closest("tr").find('td:eq(5)').text()); 
+  	 $("#ddlSupply").val($(this).closest("tr").find('td:eq(5)').text()); 
+  	 $('input[name="rdoStatus"]:checked').val($(this).closest("tr").find('td:eq(6)').text()); 
   	 
 }); 
 
@@ -108,10 +108,10 @@ function onAccountSaveComplete(response, status)
 	 	var resultSet = JSON.parse(response); 
 	 	
 	 	if (resultSet.status.trim() == "success") 
-		 	{ 
-		 $("#alertSuccess").text("Successfully saved."); 
-		 $("#alertSuccess").show(); 
-		 $("#divAccountsGrid").html(resultSet.data); 
+	 	{ 
+			 $("#alertSuccess").text("Successfully saved."); 
+			 $("#alertSuccess").show(); 
+			 $("#divAccountsGrid").html(resultSet.data); 
 	 	} else if (resultSet.status.trim() == "error") 
 	 	{ 
 			 $("#alertError").text(resultSet.data); 

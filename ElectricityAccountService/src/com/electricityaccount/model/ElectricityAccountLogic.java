@@ -91,10 +91,11 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 				generatedKey = rs.getInt(1);
 			}
 
-			output = "Inserted successfully. New Account ID: " + generatedKey;
+			String accounts = getAllElectricityAccounts().get("ElectricityAccount").toString(); 
+			output = "{\"status\":\"success\", \"data\": \"" + accounts + "\"}"; 
 
 		} catch (Exception e) {
-			output = "Error while inserting";
+			output = "{\"status\":\"error\", \"data\": \"Error while inserting the item.\"}"; 
 			log.log(Level.SEVERE, e.getMessage());
 		} finally {
 			// Close prepared statement and database connectivity
@@ -143,9 +144,10 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 
 			preparedStmt.executeUpdate();
 
-			output = "Updated successfully";
+			String accounts = getAllElectricityAccounts().get("ElectricityAccount").toString(); 
+			output = "{\"status\":\"success\", \"data\": \"" + accounts + "\"}"; 
 		} catch (SQLException e) {
-			output = "Error while updating";
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the item.\"}"; 
 			log.log(Level.SEVERE, e.getMessage());
 		} finally {
 			// Close prepared statement and database connectivity
@@ -203,9 +205,10 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 
 			preparedStmt.executeUpdate();
 
-			output = "Updated successfully";
+			String accounts = getAllElectricityAccounts().get("ElectricityAccount").toString(); 
+			output = "{\"status\":\"success\", \"data\": \"" + accounts + "\"}"; 
 		} catch (SQLException e) {
-			output = "Error while updating";
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the item.\"}"; 
 			log.log(Level.SEVERE, e.getMessage());
 		} finally {
 			// Close prepared statement and database connectivity
@@ -250,11 +253,12 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 			preparedStmt.setInt(1, eaccID);
 			preparedStmt.executeUpdate();
 
-			output = "Sueccessfully Deleted.";
+			String accounts = getAllElectricityAccounts().get("ElectricityAccount").toString(); 
+			output = "{\"status\":\"success\", \"data\": \"" + accounts + "\"}"; 
 
 		} catch (Exception e) {
 			log.log(Level.SEVERE, e.getMessage());
-			output = "Error while deleting the electricity account.";
+			output = "{\"status\":\"error\", \"data\": \"Error while deleting the item.\"}"; 
 		} finally {
 
 			// Close prepared statement and database connectivity at the end of transaction 
