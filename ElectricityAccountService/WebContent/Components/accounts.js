@@ -45,13 +45,13 @@ $(document).on("click", "#btnSave", function(event)
 $(document).on("click", ".btnUpdate", function(event) 
 { 
 	 $("#hidAccountIDSave").val($(this).data("accountid"));   
-	 $("#accName").val($(this).closest("tr").find('td:eq(0)').text()); 
-	 $("#accAddress").val($(this).closest("tr").find('td:eq(1)').text()); 
-	 $("#accPremise").val($(this).closest("tr").find('td:eq(2)').text()); 
-  	 $('input[name="rdoType"]:checked').val($(this).closest("tr").find('td:eq(3)').text()); 
-  	 $("#ddlPurpose").val($(this).closest("tr").find('td:eq(4)').text()); 
-  	 $("#ddlSupply").val($(this).closest("tr").find('td:eq(5)').text()); 
-  	 $('input[name="rdoStatus"]:checked').val($(this).closest("tr").find('td:eq(6)').text()); 
+	 $("#accName").val($(this).closest("tr").find('td:eq(1)').text()); 
+	 $("#accAddress").val($(this).closest("tr").find('td:eq(2)').text()); 
+	 $("#accPremise").val($(this).closest("tr").find('td:eq(3)').text()); 
+  	 $('input[name="rdoType"]:checked').val($(this).closest("tr").find('td:eq(4)').text()); 
+  	 $("#ddlPurpose").val($(this).closest("tr").find('td:eq(5)').text()); 
+  	 $("#ddlSupply").val($(this).closest("tr").find('td:eq(6)').text()); 
+  	 $('input[name="rdoStatus"]:checked').val($(this).closest("tr").find('td:eq(7)').text()); 
   	 
 }); 
 
