@@ -275,8 +275,10 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 
 	// Retrieve all electricity accounts
 	@Override
-	public Map<String, Object> getAllElectricityAccounts() {
+	public Map<String, Object>getAllElectricityAccounts() {
 
+		String output = ""; 
+		
 		// Initialize Electricity account List
 		List<ElectricityAccount> electricityAccountList = new ArrayList<>();
 
@@ -297,9 +299,18 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 				return data;
 			}
 
+			// Prepare the html table to be displayed
+			 output = "<table border='1'><tr><th>Account ID</th>" 
+			 + "<th>Account Name</th><th>Item Price</th>"
+			 + "<th>Billing Address</th>" 
+			 + "<th>Connection Type</th>" 
+			 + "<th>Electricity Usage Purpose</th>" 
+			 + "<th>Electricity Supply</th>" 
+			 + "<th>Connection Premise</th>" 
+			 + "<th>Update</th><th>Remove</th></tr>"; 
+			
 			// initialize a statement
 			statement = connection.createStatement();
-
 
 			rs = statement.executeQuery(SELECT_ALL_ELECTRICITY_ACCOUNTS);
 
@@ -315,12 +326,24 @@ public class ElectricityAccountLogic implements IElectricityAccount{
 				electricityAccount.setElectrcitySupply(rs.getString("electrcity_supply"));
 				electricityAccount.setPremise(rs.getString("premise"));
 
-				electricityAccountList.add(electricityAccount);
+				// Add into the html table
+				 output += "<tr><td>" + electricityAccount.getEaccID() + "</td>"; 
+				 output += "<td>" + electricityAccount.getEaccName() + "</td>"; 
+				 output += "<td>" + electricityAccount.getBillingAddress() + "</td>"; 
+				 output += "<td>" + electricityAccount.getConType() + "</td>"; 
+				 output += "<td>" + electricityAccount.getConPurpose() + "</td>"; 
+				 output += "<td>" + electricityAccount.getConStatus() + "</td>"; 
+				 output += "<td>" + electricityAccount.getElectrcitySupply() + "</td>"; 
+				 output += "<td>" + electricityAccount.getPremise() + "</td>"; 
+				 
+				// buttons
+				 output += "<td><input name='btnUpdate' type='button' value='Update' "
+				 + "class='btnUpdate btn btn-secondary' data-accountid='" + electricityAccount.getEaccID() + "'></td>"
+				 + "<td><input name='btnRemove' type='button' value='Remove' "
+				 + "class='btnRemove btn btn-danger' data-accountid='" + electricityAccount.getEaccID() + "'></td></tr>"; 
 			}
 
-			// return electricity account list
-
-			data.put("ElectricityAccount", electricityAccountList);
+			data.put("ElectricityAccount", output);
 			return data;
 
 		} catch (Exception e) {

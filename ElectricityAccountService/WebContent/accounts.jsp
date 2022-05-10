@@ -8,8 +8,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ElectroGrid</title>
-<link rel="stylesheet" href="Views/bootstrap.min.css">
-<script src="Components/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="Views/bootstrap.min.css">	
+<script src="Components/jquery-3.2.1.min.js"></script>
 <script src="Components/accounts.js"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col">
 
-				<h1>Electricity Accounts Management</h1>
+				<h4>Electricity Accounts Management</h4>
 				<br>
 
 				<form id="formAccount" name="formAccount" method="post"
@@ -93,13 +93,15 @@
 					%>
 				</div>
 				<br> <br>
-
+			</div>
+			
+			<div class="col">
 				<%
 					ElectricityAccountLogic eacc = new ElectricityAccountLogic();
 					out.print(eacc.getAllElectricityAccounts());
 				%>
-
 			</div>
+			
 		</div>
 	</div>
 </body>

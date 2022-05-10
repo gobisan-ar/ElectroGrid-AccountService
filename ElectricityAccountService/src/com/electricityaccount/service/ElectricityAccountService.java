@@ -38,12 +38,7 @@ public class ElectricityAccountService {
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String listAllElectricityAccounts() {
-
-		GsonBuilder gb = new GsonBuilder();
-		gb.setPrettyPrinting();
-
-		Gson gson = gb.create();
-		return gson.toJson(iElectricityAccount.getAllElectricityAccounts());
+		return iElectricityAccount.getAllElectricityAccounts().get("ElectricityAccount").toString();
 	}
 
 	// Retrieve specific electricity account by ID
